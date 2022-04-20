@@ -54,6 +54,12 @@
     background-color: #7a2706;
 }
 
+.actions .submit:disabled {
+    background-color: gray;
+    color: white;
+    cursor: not-allowed;
+}
+
 .invalid label {
     color: #ca3e51;
 }
@@ -61,4 +67,11 @@
 .invalid input {
     border-color: #aa0b20;
     background-color: #ffeff1;
+}
+
+.error-message {
+    color: red;
+    margin: 0.25rem 0;
+    font: inherit;
+    font-size: 0.83rem;
 }

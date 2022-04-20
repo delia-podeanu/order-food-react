@@ -9,7 +9,7 @@ const useHttp = (options, dataTransform) => {
       let optionsReq = {
         method: options.method ? options.method : "GET",
       };
-      if (options.method == "POST") {
+      if (options.method === "POST") {
         optionsReq = options;
       }
       const response = await fetch(options.url, options);
