@@ -4,7 +4,9 @@ const useInput = (validateValue, classesName) => {
   const [enteredValue, setEnteredValue] = useState("");
   const [isTouched, setIsTouched] = useState(false);
 
-  const valueIsValid = validateValue(enteredValue);
+  const validateReturn = validateValue(enteredValue);
+  const valueIsValid = validateReturn.hasError;
+  const errorMessage = validateReturn.errorMessage;
   const hasError = !valueIsValid && isTouched;
 
   const valueChangeHandler = (e) => {
@@ -21,6 +23,7 @@ const useInput = (validateValue, classesName) => {
   return {
     value: enteredValue,
     hasError,
+    errorMessage,
     isValid: valueIsValid,
     classesInput,
     valueChangeHandler,

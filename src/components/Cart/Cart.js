@@ -41,7 +41,21 @@ const Cart = (props) => {
         <span>Total Amount</span>
         <span>{totalAmount}</span>
       </div>
-      <OrderForm onCancel={props.onClose} items={cartCtx.items}></OrderForm>
+      {hasItems && (
+        <OrderForm onCancel={props.onClose} items={cartCtx.items}></OrderForm>
+      )}
+
+      {!hasItems && (
+        <div className={classes.actions}>
+          <button
+            type="button"
+            className={classes.button}
+            onClick={props.onClose}
+          >
+            Cancel
+          </button>
+        </div>
+      )}
     </Modal>
   );
 };
